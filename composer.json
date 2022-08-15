@@ -1,0 +1,17 @@
+{
+    "name": "aminataee/mvc",
+    "authors": [
+        {
+            "name": "Amin Ataee",
+            "email": "maminataee@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
