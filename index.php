@@ -1,5 +1,9 @@
 <?php
+require "./Bootstrap/init.php";
 
-require './vendor/autoload.php';
+use App\Utilities\Url;
 
 new App\Core\Request();
+
+$router = new \App\Router\Router();
+include $router->run();
