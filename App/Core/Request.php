@@ -8,6 +8,7 @@ class Request
     private $agent;
     private $ip;
     private $method;
+    private $uri;
 
     public function __construct()
     {
@@ -15,6 +16,7 @@ class Request
         $this->agent = $_SERVER['HTTP_USER_AGENT'];
         $this->method = $_SERVER['REQUEST_METHOD'];
         $this->ip = $_SERVER['REMOTE_ADDR'];
+        $this->uri = strtok($_SERVER['REQUEST_URI'], '?');
     }
 
     public function __get(string $key)
@@ -50,6 +52,11 @@ class Request
     public function ip(): string
     {
         return $this->ip;
+    }
+
+    public function uri(): string
+    {
+        return $this->uri;
     }
 
     public function redirect($route)

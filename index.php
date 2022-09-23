@@ -1,10 +1,9 @@
 <?php
-require "./Bootstrap/init.php";
+include "./Bootstrap/init.php";
 
 use App\Core\Request;
+use App\Core\Routing\Router;
 
 $request = new Request();
-//$router = new Router();
-//$router->run();
-
-print_r($request->age);
+$router = new Router($request);
+$router->run();
